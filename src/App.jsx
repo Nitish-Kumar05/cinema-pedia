@@ -1,12 +1,16 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import Starred from './pages/Starred'
 
 function App() {
   return (
-    <div>
-      <h1>
-        Hello
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/starred" element={<Starred />} />
+        <Route path="*" element={<div>NOT FOUND</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
