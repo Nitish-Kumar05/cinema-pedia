@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AppTitle = ({ title = "Cinema-Pedia", subtitle = "All your cinema in one place" }) => {
+const AppTitle = ({ title = "TV-Pedia", subtitle = "All your cinema in one place" }) => {
     return (
         <>
             <h1>
