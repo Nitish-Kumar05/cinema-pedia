@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getShowId } from '../utils/tvmazeapi';
 import { useQuery } from '@tanstack/react-query';
 import ShowMainData from '../components/shows/ShowMainData';
@@ -23,6 +23,11 @@ const Show = () => {
 
     if (showData) {
         return <div>
+
+            <Link to='/' >
+                Go back to home
+            </Link>
+
             <ShowMainData
                 image={showData.image}
                 name={showData.name}
@@ -30,6 +35,7 @@ const Show = () => {
                 summary={showData.summary}
                 genres={showData.genres}
             />
+
             <div>
                 <h2>Details</h2>
                 <Details
@@ -38,10 +44,12 @@ const Show = () => {
                     network={showData.network}
                 />
             </div>
+
             <div>
                 <h2>Seasons</h2>
                 <Season seasons={showData._embedded.seasons} />
             </div>
+
             <div>
                 <h2>Cast</h2>
                 <Cast cast={showData._embedded.cast} />

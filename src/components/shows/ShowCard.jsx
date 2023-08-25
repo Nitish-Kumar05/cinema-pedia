@@ -1,6 +1,3 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
 const ShowCard = ({ name, image, id, summary }) => {
 
     const shortSummary = summary ? summary.split(" ").slice(0, 10).join(" ").replace(/<.+?>/g, '') : 'No description found'
@@ -15,7 +12,7 @@ const ShowCard = ({ name, image, id, summary }) => {
             <p>{shortSummary}</p>
 
             <div>
-                <Link to={`/show/${id}`} >Read More...</Link>
+                <a href={`/show/${id}`} target="_blank" rel="noreferrer" >Read More...</a>
                 <button type='button' >Star Me</button>
             </div>
         </>
