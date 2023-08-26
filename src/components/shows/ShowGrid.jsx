@@ -1,7 +1,31 @@
-import React from 'react'
+import { useReducer } from 'react'
 import ShowCard from './ShowCard'
 
+const starredShowsReducer = (currentStarred, action) => {
+    switch (action.type) {
+        case 'STAR':
+            return currentStarred.concat(action.showId);
+        case 'UNSTAR':
+            return currentStarred.filter(showId => showId !== action.showId)
+        default:
+            return currentStarred;
+    }
+}
+
 const ShowGrid = ({ shows }) => {
+
+    const [starredShows, dispatchStarred] = useReducer(starredShowsReducer, [])
+
+    const onStarMeClick = showId => {
+        const isStarred = starredShows.include(showId);
+
+        if (isStarred) {
+            dispatchStarred({ type: 'UNSTAR', showId })
+        } else {
+            dispatchStarred({ type: 'STAR', showId })
+        }
+    }
+
     return (
         <>
             {shows.map(data => (
