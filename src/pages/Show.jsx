@@ -6,66 +6,66 @@ import Details from '../components/shows/Details';
 import Season from '../components/shows/Season';
 import Cast from '../components/shows/Cast';
 import { styled } from 'styled-components';
-import { TextCenter } from '../common/TextCenter'
+import { TextCenter } from '../components/common/TextCenter'
 
 
 const Show = () => {
 
-    const { showId } = useParams();
+  const { showId } = useParams();
 
-    const { data: showData, error: showError } = useQuery({
-        queryKey: ['show', showId],
-        queryFn: () => getShowId(showId),
-        refetchOnWindowFocus: false,
-    })
+  const { data: showData, error: showError } = useQuery({
+    queryKey: ['show', showId],
+    queryFn: () => getShowId(showId),
+    refetchOnWindowFocus: false,
+  })
 
-    if (showError) {
-        return <TextCenter>We have an error: {showError.message}</TextCenter>
-    }
+  if (showError) {
+    return <TextCenter>We have an error: {showError.message}</TextCenter>
+  }
 
-    if (showData) {
-        return <ShowPageWrapper>
+  if (showData) {
+    return <ShowPageWrapper>
 
-            <BackHomeWrapper>
-                <Link to='/' >
-                    Go back to home
-                </Link>
-            </BackHomeWrapper>
+      <BackHomeWrapper>
+        <Link to='/' >
+          Go back to home
+        </Link>
+      </BackHomeWrapper>
 
-            <ShowMainData
-                image={showData.image}
-                name={showData.name}
-                rating={showData.rating}
-                summary={showData.summary}
-                genres={showData.genres}
-            />
+      <ShowMainData
+        image={showData.image}
+        name={showData.name}
+        rating={showData.rating}
+        summary={showData.summary}
+        genres={showData.genres}
+      />
 
-            <InfoBlock>
-                <h2>Details</h2>
-                <Details
-                    status={showData.status}
-                    premiered={showData.premiered}
-                    network={showData.network}
-                />
-            </InfoBlock>
+      <InfoBlock>
+        <h2>Details</h2>
+        <Details
+          status={showData.status}
+          premiered={showData.premiered}
+          network={showData.network}
+        />
+      </InfoBlock>
 
-            <InfoBlock>
-                <h2>Seasons</h2>
-                <Season seasons={showData._embedded.seasons} />
-            </InfoBlock>
+      <InfoBlock>
+        <h2>Seasons</h2>
+        <Season seasons={showData._embedded.seasons} />
+      </InfoBlock>
 
-            <InfoBlock>
-                <h2>Cast</h2>
-                <Cast cast={showData._embedded.cast} />
-            </InfoBlock>
-        </ShowPageWrapper>
-    }
+      <InfoBlock>
+        <h2>Cast</h2>
+        <Cast cast={showData._embedded.cast} />
+      </InfoBlock>
+    </ShowPageWrapper>
+  }
 
-    return (
-        <TextCenter>
-            LOADING......
-        </TextCenter>
-    )
+  return (
+    <TextCenter>
+      LOADING......
+    </TextCenter>
+  )
 }
 
 export default Show
