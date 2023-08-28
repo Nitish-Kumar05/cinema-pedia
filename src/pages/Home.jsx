@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { searchForShows, searchForPeople } from "../utils/tvmazeapi"
 import { useQuery } from "@tanstack/react-query"
+import { TextCenter } from '../components/common/TextCenter'
 import SearchForm from "../components/SearchForm"
 import ShowGrid from "../components/shows/ShowGrid"
 import ActorsGrid from "../components/actors/ActorsGrid"
@@ -27,13 +28,13 @@ const Home = () => {
     const renderApiData = () => {
         // For showing results in page also error
         if (apiDataError) {
-            return <div>
+            return <TextCenter>
                 ERROR OCCURED: {apiDataError.message}
-            </div>
+            </TextCenter>
         }
 
         if (apiData?.length === 0) {
-            return <div>No Results</div>
+            return <TextCenter>No Results</TextCenter>
         }
 
         if (apiData) {

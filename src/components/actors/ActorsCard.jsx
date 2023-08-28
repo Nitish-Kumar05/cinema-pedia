@@ -1,12 +1,12 @@
-import React from 'react'
+import { SearchCard, SearchImgWrapper } from '../common/SearchCard'
 
 const ActorsCard = ({ name, image, gender, country, birthday }) => {
 
     return (
-        <>
-            <div>
+        <SearchCard>
+            <SearchImgWrapper>
                 <img src={image} alt={name} />
-            </div>
+            </SearchImgWrapper>
 
             <h1>
                 {name}
@@ -18,7 +18,7 @@ const ActorsCard = ({ name, image, gender, country, birthday }) => {
             </p>
 
             {!!birthday && <p>Born : {birthday}</p>}
-        </>
+        </SearchCard>
     )
 }
 
