@@ -11,13 +11,13 @@ TV-Pedia is a web application that allows users to search for TV shows and actor
 
 ## Usage
 
--Search: Use the search functionality to find TV shows and actors.
--Favorites: Click the star icon to mark items as favorites. Favorited items will be stored in local storage.
--Navigation: Navigate between different sections of the application using the provided links or the navigation bar.
+- Search: Use the search functionality to find TV shows and actors.
+- Favorites: Click the star icon to mark items as favorites. Favorited items will be stored in local storage.
+- Navigation: Navigate between different sections of the application using the provided links or the navigation bar.
 
 ## Technologies Used
 
--React.js
--Create React App
--Styled Components
--React Router
+- React.js
+- Create React App
+- Styled Components
+- React Router
