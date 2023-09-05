@@ -2,6 +2,9 @@
 
 TV-Pedia is a web application that allows users to search for TV shows and actors. Users can also mark their favorite items, which will be stored using local storage. The application is built using Create React App and styled using Styled Components. React Router is used for handling routing within the application.
 
+![tvpedia](https://github.com/Nitish-Kumar05/cinema-pedia/assets/141276983/81ac518f-23a2-4fff-9459-c95492073181)
+
+
 ## Features
 
 - Search for TV shows and actors.
