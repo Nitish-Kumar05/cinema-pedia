@@ -20,7 +20,7 @@ TV-Pedia is a web application that allows users to search for TV shows and actor
 
 ## Technologies Used
 
-- React.js
-- Create React App
-- Styled Components
-- React Router
+- React.js.
+- Create React App.
+- Styled Components.
+- React Router.
